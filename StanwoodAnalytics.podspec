@@ -37,7 +37,7 @@ A framework to encapsulate analytics and logging frameworks from Fabric, Crashly
   
   s.subspec 'Base' do |ss|
       ss.dependency 'StanwoodAnalytics/Core'
-      ss.dependency 'StanwoodAnalytics/Fabric'
+      # ss.dependency 'StanwoodAnalytics/Fabric'
       # ss.dependency 'StanwoodAnalytics/Firebase'
       # ss.dependency 'StanwoodAnalytics/TestFairy'
   end
@@ -52,12 +52,12 @@ A framework to encapsulate analytics and logging frameworks from Fabric, Crashly
   #     'FirebaseCoreDiagnostics']
   # end
   
-  s.subspec 'Fabric' do |ss|
-      ss.dependency 'StanwoodAnalytics/Core'
-      ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/Fabric/'
-      ss.ios.vendored_frameworks = ['Frameworks/Crashlytics.framework',
-      'Frameworks/Fabric.framework']
-  end
+  # s.subspec 'Fabric' do |ss|
+  #     ss.dependency 'StanwoodAnalytics/Core'
+  #     ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/Fabric/'
+  #     ss.ios.vendored_frameworks = ['Frameworks/Crashlytics.framework',
+  #     'Frameworks/Fabric.framework']
+  # end
   
   s.subspec 'BugFender' do |ss|
       ss.dependency 'BugfenderSDK', '1.5'
