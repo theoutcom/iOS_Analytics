@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StanwoodAnalytics'
-  s.version          = '1.1.10'
+  s.version          = '1.1.11'
   s.swift_version   = '5.0'
   s.summary          = 'StanwoodAnalytics encapsulates the frameworks Stanwood uses from various vendors used in analytics and logging.'
   s.description      = <<-DESC
@@ -10,7 +10,7 @@ A framework to encapsulate analytics and logging frameworks from Fabric, Crashly
   s.homepage         = 'https://github.com/stanwood/Stanwood_Analytics_iOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
-  s.source           = { :git => 'https://github.com/stanwood/Stanwood_Analytics_iOS.git', :tag => s.version.to_s}
+  s.source           = { :git => 'https://github.com/theoutcom/iOS_Analytics.git', :tag => s.version.to_s}
   
   s.ios.deployment_target = '10.0'
   s.static_framework = true
@@ -38,19 +38,19 @@ A framework to encapsulate analytics and logging frameworks from Fabric, Crashly
   s.subspec 'Base' do |ss|
       ss.dependency 'StanwoodAnalytics/Core'
       ss.dependency 'StanwoodAnalytics/Fabric'
-      ss.dependency 'StanwoodAnalytics/Firebase'
-      ss.dependency 'StanwoodAnalytics/TestFairy'
+      # ss.dependency 'StanwoodAnalytics/Firebase'
+      # ss.dependency 'StanwoodAnalytics/TestFairy'
   end
   
-  s.subspec 'Firebase' do |ss|
-      ss.dependency 'StanwoodAnalytics/Core'
-      ss.dependency 'Firebase/Analytics'
-      ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/Firebase/'
-      ss.frameworks = ['FirebaseCore',
-      'FirebaseInstanceID',
-      'FirebaseAnalytics',
-      'FirebaseCoreDiagnostics']
-  end
+  # s.subspec 'Firebase' do |ss|
+  #     ss.dependency 'StanwoodAnalytics/Core'
+  #     ss.dependency 'Firebase/Analytics'
+  #     ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/Firebase/'
+  #     ss.frameworks = ['FirebaseCore',
+  #     'FirebaseInstanceID',
+  #     'FirebaseAnalytics',
+  #     'FirebaseCoreDiagnostics']
+  # end
   
   s.subspec 'Fabric' do |ss|
       ss.dependency 'StanwoodAnalytics/Core'
@@ -65,18 +65,18 @@ A framework to encapsulate analytics and logging frameworks from Fabric, Crashly
       ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/BugFender/'
   end
   
-  s.subspec 'TestFairy' do |ss|
-      ss.ios.vendored_library = 'Frameworks/libTestFairy.a'
-      ss.dependency 'StanwoodAnalytics/Core'
-      ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/TestFairy/*.{swift,h,m}'
-      ss.frameworks = [
-      'CoreMedia',
-      'CoreMotion',
-      'AVFoundation',
-      'SystemConfiguration',
-      'OpenGLES'
-      ]
-  end
+  # s.subspec 'TestFairy' do |ss|
+  #     ss.ios.vendored_library = 'Frameworks/libTestFairy.a'
+  #     ss.dependency 'StanwoodAnalytics/Core'
+  #     ss.source_files = 'StanwoodAnalytics/Classes/SubSpecs/TestFairy/*.{swift,h,m}'
+  #     ss.frameworks = [
+  #     'CoreMedia',
+  #     'CoreMotion',
+  #     'AVFoundation',
+  #     'SystemConfiguration',
+  #     'OpenGLES'
+  #     ]
+  # end
   
   s.subspec 'Mixpanel' do |ss|
       ss.dependency 'Mixpanel-swift'
